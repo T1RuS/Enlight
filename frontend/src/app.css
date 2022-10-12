@@ -1,97 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;1000&display=swap');
-
-/*   Применить для всего   */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-    font-family: 'Nunito', sans-serif;
-    font-weight: 400;
-}
-
-
-
-
-/*   Стили для тёмный и светлой темы   */
-html[data-theme="dark"] {
-    --background: #0a0a0a;
-    --text-color-main: #dcdcdc;
-}
-
-html[data-theme="light"] {
-    --background: #eaeff0;
-    --text-color-main: black;
-}
-
-
-
-
-/*   Общие стили   */
-:root {
-    --smooth: all 0.3s ease 0s;
-
-    --18px: calc(18px + 1 * (100vw / 1280));
-    --24px: calc(24px + 1 * (100vw / 1280));
-    --40px: calc(24px + 16 * (100vw / 1280));
-
-
-    --inactive-text: #84858a;
-
-    --green: #3ba45d;
-    --blue: #5a64ef;
-    --darker-blue: #434ccb;
-}
-
-
-
-
-body {
-    min-width: 100vw;
-    width: 100vw;
-    max-width: 100vw;
-    min-height: 100vh;
-    height: 100vh;
-    max-height: 100vh;
-
-    background: var(--background);
-}
 
 .wrapper {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 5%;
 
-    min-width: 100%;
-    width: 100%;
+    min-width: 100vw;
+    width: 100vw;
+    max-width: 100vw;
     min-height: 100vh;
-    height: 100vh;
 }
 
-.wrapper > :not(:first-child) {
-    margin-top: 40px;
-}
-
-
-
-
- /*   Класс для иконок google   */
-.material-symbols-outlined {
-    user-select: none;
-    font-variation-settings:
-            'FILL' 1,
-            'wght' 600,
-            'GRAD' 200,
-            'opsz' 48
-}
-span {
-    color: var(--text-color-main);
-}
-
-
-
-/*  Скрыть скроллбар везде и не занимать место   */
-::-webkit-scrollbar {
-    display: none;
+.logo {
+    width: calc(100px + 3vw);
+    height: calc(100px + 3vw);
 }
