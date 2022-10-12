@@ -13,7 +13,8 @@ import "./app.css"
 function App() {
     useEffect(() => {
         // Проверить наличие темы в local storage и установить её
-        let storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        let storedTheme = localStorage.getItem('theme') ||
+            (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
         if (storedTheme)
             document.documentElement.setAttribute('data-theme', storedTheme)
     }, [])
