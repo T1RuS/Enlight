@@ -1,0 +1,21 @@
+.button {
+    min-width: 150px;
+    width: 150px;
+    min-height: 60px;
+    height: 60px;
+
+    border-radius: 30px;
+    outline: none;
+    border: none;
+
+    background: var(--blue);
+
+    cursor: pointer;
+    color: white;
+
+    transition: var(--smooth);
+}
+
+.button:hover {
+    background: var(--darker-blue);
+}
