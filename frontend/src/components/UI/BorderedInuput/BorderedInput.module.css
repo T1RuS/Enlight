@@ -9,10 +9,12 @@
     width: 70%;
     min-height: 50px;
     height: 50px;
+
+    z-index: 100;
 }
 
 .wrapper input {
-    padding: 0 8% 0 3%;
+    padding: 0 5% 0 3%;
 
     min-width: 70%;
     width: 70%;
@@ -42,7 +44,6 @@
 
 .rainbowGlow {
     position: absolute;
-    padding: 0 8% 0 3%;
 
     top: -1px;
     left: calc(15% - 1px);
@@ -58,13 +59,31 @@
 
     animation: 3s rainbowGlow infinite ease alternate;
 }
-.wrapper input:focus ~ .rainbowGlow {
+.rainbowGlow:before {
+    content: "";
+    position: absolute;
+
+    top: -1px;
     left: -1px;
     right: -1px;
+    bottom: -1px;
+
+    filter: blur(10px) opacity(0.5);
+
+    border-radius: 15px;
+
+    background: radial-gradient(var(--gradient-color1) 60%, var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
+
+    transition: var(--smooth);
+    z-index: -1;
+}
+.wrapper input:focus ~ .rainbowGlow {
+    left: calc(2.5% - 1px);
+    right: calc(2.5% - 1px);
 }
 
 .wrapper input:focus {
-    width: 100%;
+    width: 95%;
 }
 
 
@@ -86,8 +105,23 @@
     transform: scale(1.1);
 }
 
+input:focus ~ .icon {
+    pointer-events: none;
+
+    cursor: default !important;
+}
+
 .wrapper input:focus ~ .icon {
-    right: 1.5%;
+    right: 3.5%;
+}
+
+.switcher {
+    transition: all 0.4s ease 0s;
+}
+
+.wrapper input:focus ~ .switcher {
+    position: absolute;
+    right: 5%;
 }
 
 .wrapper input:focus ~ .icon {

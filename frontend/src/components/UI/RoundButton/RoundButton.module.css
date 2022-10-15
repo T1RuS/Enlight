@@ -1,21 +1,82 @@
+.wrapper {
+    position: relative;
+
+    min-width: 100px;
+    width: 100px;
+    min-height: 40px;
+    height: 40px;
+
+    border-radius: 40px;
+}
+
+
 .button {
-    min-width: 150px;
-    width: 150px;
-    min-height: 60px;
-    height: 60px;
+    position: relative;
+    width: 100%;
+    height: 100%;
 
-    border-radius: 30px;
+    border-radius: inherit;
     outline: none;
-    border: none;
 
-    background: var(--blue);
+    background: var(--background);
 
     cursor: pointer;
-    color: white;
+    color: var(--text-color-main);
+    font-weight: bold;
 
-    transition: var(--smooth);
+    transition: transform 0.3s ease 0s;
+}
+
+.light {
+    border: 1px solid var(--text-color-main)
+}
+
+.dark {
+    border: none;
+}
+
+.darkText {
+    background: linear-gradient(var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .button:hover {
-    background: var(--darker-blue);
+    transform: translateY(-5px);
+
+    background: var(--background);
+}
+
+.glow {
+    position: absolute;
+    left: -1px;
+    right: -1px;
+    top: -1px;
+    bottom: -1px;
+
+    background: radial-gradient(var(--gradient-color1) 50%, var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
+
+    border-radius: inherit;
+    transition: all 0.3s ease 0s;
+    z-index: -1;
+}
+
+.glow:before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    right: -1px;
+    top: -1px;
+    bottom: -1px;
+
+    background: radial-gradient(var(--gradient-color1) 50%, var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
+    filter: blur(5px) opacity(0.5);
+
+    border-radius: inherit;
+    transition: all 0.3s ease 0s;
+    z-index: 1000;
+}
+
+.button:hover ~ .glow {
+    transform: translateY(-5px);
 }

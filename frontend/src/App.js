@@ -1,4 +1,3 @@
-import BorderedInput from "./components/UI/BorderedInuput/BorderedInput";
 import logo from "./img/logoText.png";
 import logoBlack from "./img/logoBlack.png";
 
@@ -7,12 +6,13 @@ import {useEffect, useState} from "react";
 
 import "./app.css";
 import "./global.css";
-import ThemeSwitcher from "./components/UI/ThemeSwitcher/ThemeSwitcher";
+import FilterForm from "./components/FilterForm/FilterForm";
 
 
 
 function App() {
     const [theme, setTheme] = useState("light")
+    const [modal, setModal] = useState(false)
 
     useEffect(() => {
         // Проверить наличие темы в local storage и установить её
@@ -40,10 +40,9 @@ function App() {
 
     return (
         <ThemeContext.Provider value={{theme, toggleTheme}}>
-            <div className="wrapper">
-                <img className="logo" src={theme === "light" ? logoBlack : logo} alt="logo"/>
-                <ThemeSwitcher/>
-                <BorderedInput/>
+            <div className="wrapper" onMouseDown={() => setModal(false)}>
+                <img draggable={false} className="logo" src={theme === "light" ? logoBlack : logo} alt="logo"/>
+                <FilterForm modal={modal} setModal={setModal}/>
             </div>
         </ThemeContext.Provider>
     );

@@ -1,0 +1,33 @@
+.wrapper {
+    position: relative;
+
+    width: 70%;
+    height: fit-content;
+}
+
+.inputArea {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 100%;
+    height: fit-content;
+}
+
+.inputArea > :last-child {
+    margin-top: 20px;
+}
+
+.btn, .modal {
+    transition: var(--smooth);
+}
+
+.hide {
+    transform: translateY(50px) scaleY(0) !important;
+}
+.activeModal {
+    transform: translateY(-40px) !important;
+}
