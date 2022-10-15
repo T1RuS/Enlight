@@ -1,0 +1,83 @@
+.elem {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 100px;
+    width: 100px;
+    min-height: 50px;
+    height: 50px;
+
+    border-radius: 15px;
+
+    border: 1px solid var(--text-color-main);
+
+    cursor: pointer;
+
+    font-size: 6px;
+    font-variant: small-caps;
+    text-transform: uppercase;
+
+    background: var(--background);
+    color: var(--text-color-main);
+
+    transition: all 0.1s ease 0s;
+
+    user-select: none;
+}
+
+.elem h1 {
+    pointer-events: none;
+}
+
+.active[data-theme="dark"] {
+    background: linear-gradient(to left, var(--gradient-color1), var(--gradient-color2), var(--gradient-color3), var(--gradient-color4)) !important;
+}
+
+.active[data-theme="dark"] h1 {
+    -webkit-text-fill-color: var(--background) !important;
+}
+
+.active[data-theme="light"] {
+    background: var(--text-color-main);
+    color: var(--background);
+}
+
+.elem:before {
+    content: "";
+    position: absolute;
+
+    top: -1px;
+    right: -1px;
+    left: -1px;
+    bottom: -1px;
+
+    border-radius: 15px;
+
+    background: radial-gradient(var(--gradient-color1) 60%, var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
+    color: var(--text-color-main);
+
+    z-index: -1;
+}
+
+.elem[data-theme="dark"]:hover {
+    background: linear-gradient(to left, var(--gradient-color1), var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
+    color: var(--background);
+}
+
+.elem[data-theme="dark"]:hover h1 {
+    -webkit-text-fill-color: var(--background);
+}
+
+.elem[data-theme="light"]:hover {
+    background: var(--text-color-main);
+    color: var(--background);
+}
+
+.elem[data-theme="dark"] h1 {
+    background-image: linear-gradient(to left, var(--gradient-color1), var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

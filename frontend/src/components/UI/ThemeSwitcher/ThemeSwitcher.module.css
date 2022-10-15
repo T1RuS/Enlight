@@ -1,11 +1,14 @@
 .switcher {
     position: absolute;
-    top: -30px;
+    top: -35px;
+    right: 15%;
 
     width: 60px;
     height: 60px;
 
     user-select: none;
+
+    z-index: -1;
 }
 
 .round {
@@ -41,11 +44,6 @@
 
     box-shadow: 3px 3px 6px var(--shadow),
     -3px -3px 6px var(--glow);
-}
-
-img {
-    width: 60%;
-    height: 60%;
 }
 
 .moon {
