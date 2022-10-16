@@ -3,7 +3,7 @@ import {ThemeContext} from "../../../context/ThemeContext";
 
 import cl from "./ThemeSwitcher.module.css"
 
-import Icon from "../../Icon/Icon";
+import Icon from "../../Icon/icon";
 import classes from "classnames";
 
 

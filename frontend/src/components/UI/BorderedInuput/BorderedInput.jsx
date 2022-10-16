@@ -3,8 +3,9 @@ import React, {useContext, useRef} from 'react';
 
 import cl from "./BorderedInput.module.css";
 import {ThemeContext} from "../../../context/ThemeContext";
-import Icon from "../../Icon/Icon";
+
 import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
+import Icon from "../../Icon/icon";
 
 
 const BorderedInput = ({value, onChange}) => {

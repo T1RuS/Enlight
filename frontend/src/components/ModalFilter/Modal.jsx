@@ -5,9 +5,10 @@ import cl from "./Modal.module.css"
 
 import classes from "classnames";
 import FilterElem from "../UI/Filter/FilterElem";
+import {shops} from "../../shops/shops";
 
 
-const Modal = ({modal, className, active, setActive}) => {
+const Modal = ({modal, className, active, setActive, price1, onChange1, price2, onChange2, error}) => {
 
     const {theme} = useContext(ThemeContext);
 
@@ -30,21 +31,29 @@ const Modal = ({modal, className, active, setActive}) => {
                     <h1 data-theme={theme}>Магазины:</h1>
                     <hr data-theme={theme}/>
                     <div>
-                        <FilterElem id="DNS" onClick={(e) => toggleActive(e)}
-                                    active={active.indexOf("DNS") !== -1}/>
-
-                        <FilterElem id="Wildberries" onClick={(e) => toggleActive(e)}
-                                    active={active.indexOf("Wildberries") !== -1}/>
-
-                        <FilterElem id="Ozon" onClick={(e) => toggleActive(e)}
-                                    active={active.indexOf("Ozon") !== -1}/>
-
-                        <FilterElem id="Citylink" onClick={(e) => toggleActive(e)}
-                                    active={active.indexOf("Citylink") !== -1}/>
+                        {
+                            shops.map(shop =>
+                                <FilterElem key={shop} id={shop} onClick={(e) => toggleActive(e)}
+                                            active={active.indexOf(shop) !== -1}/>
+                            )
+                        }
                     </div>
                 </div>
 
+                <div className={cl.priceArea}>
+                    <h1 data-theme={theme}>Цена:</h1>
+                    <hr data-theme={theme}/>
 
+                    <div className={cl.priceInputs}>
+                        <div className={cl.glow} data-theme={theme}>
+                            <input value={price1} onChange={onChange1} type="number" data-theme={theme} placeholder={"От"}/>
+                        </div>
+                        <div className={cl.glow} data-theme={theme}>
+                            <input value={price2} onChange={onChange2} type="number" data-theme={theme} placeholder={"До"}/>
+                        </div>
+                    </div>
+                    <div data-error={error} className={cl.error}>Стартовая цена не может быть больше максимальной цены!</div>
+                </div>
             </div>
         </div>
     );
