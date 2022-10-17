@@ -37,8 +37,12 @@ const FilterForm = ({modal, setModal}) => {
             <Modal className={modal ? classes(cl.modal, cl.activeModal) : cl.modal}
                    modal={modal}
                    active={active} setActive={setActive}
-                   price2={price2} onChange2={(e) => setPrice2(e.target.value)}
-                   price1={price1} onChange1={(e) => setPrice1(e.target.value)}
+                   price2={price2} onChange2={(e) => {
+                if (e.target.value !== "0") setPrice2(e.target.value)
+            }}
+                   price1={price1} onChange1={(e) => {
+                if (e.target.value !== "0") setPrice1(e.target.value)
+            }}
                    error={parseInt(price1) > parseInt(price2)}/>
 
             <button type={"submit"} style={{display: "none"}} disabled={parseInt(price1) > parseInt(price2)}/>
