@@ -15,7 +15,7 @@
 html[data-theme="dark"] {
     --background: #0a0a0a;
     --shadow: rgba(0,0,0,0.5);
-    --glow: rgba(255,255,255,0.01);
+    --glow: rgba(255,255,255,0.02);
 
     --text-color-main: #dcdcdc;
 

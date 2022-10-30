@@ -6,6 +6,7 @@ import RoundButton from "../UI/RoundButton/RoundButton";
 import Modal from "../ModalFilter/Modal";
 
 import classes from "classnames";
+import {shops} from "../../shops/shops";
 
 
 const FilterForm = ({modal, setModal}) => {
@@ -13,8 +14,9 @@ const FilterForm = ({modal, setModal}) => {
     const [inputText, setInputText] = useState('')
     const [price1, setPrice1] = useState('')
     const [price2, setPrice2] = useState('')
+    const [currentSort, setCurrentSort] = useState("По возрастанию цены")
 
-    const [active, setActive] = useState([])
+    const [activeShops, setActiveShops] = useState(shops.slice(0))
 
     const submit = (e) => {
         e.preventDefault();
@@ -36,10 +38,11 @@ const FilterForm = ({modal, setModal}) => {
 
             <Modal className={modal ? classes(cl.modal, cl.activeModal) : cl.modal}
                    modal={modal}
-                   active={active} setActive={setActive}
+                   active={activeShops} setActive={setActiveShops}
                    price2={price2} onChange2={(e) => setPrice2(e.target.value)}
                    price1={price1} onChange1={(e) => setPrice1(e.target.value)}
-                   error={parseInt(price1) > parseInt(price2)}/>
+                   priceError={parseInt(price1) > parseInt(price2)} shopsError={activeShops.length === 0}
+                   currentSort={currentSort} setCurrentSort={setCurrentSort}/>
 
             <button type={"submit"} style={{display: "none"}} disabled={parseInt(price1) > parseInt(price2)}/>
         </form>
