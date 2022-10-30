@@ -1,9 +1,9 @@
 import React from 'react';
 import classes from "classnames";
 
-const Icon = ({children, onClick, className}) => {
+const Icon = ({children, className, onClick}) => {
     return (
-        <span onClick={onClick} className={classes(className, 'material-symbols-outlined')}>
+        <span onClick={onClick} className={classes(className, "material-symbols-outlined")}>
             {children}
         </span>
     );
