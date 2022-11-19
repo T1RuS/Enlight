@@ -33,7 +33,7 @@
 }
 
 .active[data-theme="dark"] {
-    background: var(--linear-grad) !important;
+    background: linear-gradient(to left, var(--gradient-color1), var(--gradient-color2), var(--gradient-color3), var(--gradient-color4)) !important;
 }
 
 .active[data-theme="dark"] h1 {
@@ -56,16 +56,14 @@
 
     border-radius: 15px;
 
-    background: var(--linear-grad);
-
+    background: linear-gradient(to left, var(--gradient-color1), var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
     color: var(--text-color-main);
 
     z-index: -1;
 }
 
 .elem[data-theme="dark"]:hover {
-    background: var(--linear-grad);
-
+    background: linear-gradient(to left, var(--gradient-color1), var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
     color: var(--background);
 }
 
@@ -75,12 +73,11 @@
 
 .elem[data-theme="light"]:hover {
     background: var(--text-color-main);
-
     color: var(--background);
 }
 
 .elem[data-theme="dark"] h1 {
-    background-image: var(--linear-grad);
+    background-image: linear-gradient( var(--gradient-color1), var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
