@@ -4,6 +4,8 @@
     align-items: center;
     flex-direction: column;
 
+    gap: 20px;
+
     min-width: 100vw;
     width: 100vw;
     max-width: 1920px;
@@ -11,10 +13,11 @@
 }
 
 .logo {
+    margin-top: 20px;
     user-select: none;
 
-    width: calc(100px + 3vw);
-    height: calc(100px + 3vw);
+    width: calc(50px + 2vw);
+    height: calc(60px + 3vw);
 }
 .mainArea {
     display: flex;
