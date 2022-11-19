@@ -36,7 +36,7 @@
 }
 
 .darkText {
-    background: linear-gradient(var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
+    background: var(--linear-grad);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -54,10 +54,10 @@
     top: -1px;
     bottom: -1px;
 
-    background: radial-gradient(var(--gradient-color1) 50%, var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
+    background: var(--radial-grad);
 
     border-radius: inherit;
-    transition: all 0.3s ease 0s;
+    transition: var(--smooth);
     z-index: -1;
 }
 
@@ -69,7 +69,7 @@
     top: -1px;
     bottom: -1px;
 
-    background: radial-gradient(var(--gradient-color1) 50%, var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
+    background: var(--radial-grad);
     filter: blur(5px) opacity(0.5);
 
     border-radius: inherit;

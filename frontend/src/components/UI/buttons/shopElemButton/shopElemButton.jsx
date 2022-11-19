@@ -1,13 +1,13 @@
 import React, {useContext} from 'react';
-import {ThemeContext} from "../../../context/ThemeContext";
+import {ThemeContext} from "../../../../context/ThemeContext";
 
-import cl from "./FilterElem.module.css"
+import cl from "./shopElemButton.module.css"
 
 import classes from "classnames";
 
 
 
-const FilterElem = ({id, active, onClick}) => {
+const ShopElemButton = ({id, active, onClick}) => {
 
     const {theme} = useContext(ThemeContext)
 
@@ -23,4 +23,4 @@ const FilterElem = ({id, active, onClick}) => {
     );
 };
 
-export default FilterElem;
+export default ShopElemButton;

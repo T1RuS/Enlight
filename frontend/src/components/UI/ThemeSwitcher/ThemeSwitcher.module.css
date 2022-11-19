@@ -55,7 +55,7 @@
 .sun {
     bottom: -20px;
 
-    background-image: linear-gradient(var(--gradient-color1), var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
+    background-image: var(--linear-grad);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

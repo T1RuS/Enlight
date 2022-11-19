@@ -52,7 +52,7 @@
 
     border-radius: 15px;
 
-    background: radial-gradient(var(--gradient-color1) 60%, var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
+    background: var(--radial-grad);
 
     transition: var(--smooth);
     z-index: -1;
@@ -72,7 +72,7 @@
 
     border-radius: 15px;
 
-    background: radial-gradient(var(--gradient-color1) 60%, var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
+    background: var(--radial-grad);
 
     transition: var(--smooth);
     z-index: -1;
