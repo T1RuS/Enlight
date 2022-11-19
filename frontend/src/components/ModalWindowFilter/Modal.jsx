@@ -4,7 +4,7 @@ import {ThemeContext} from "../../context/ThemeContext";
 import cl from "./Modal.module.css"
 
 import classes from "classnames";
-import FilterElem from "../UI/Filter/FilterElem";
+import ShopElemButton from "../UI/buttons/shopElemButton/shopElemButton";
 import {shops} from "../../shops/shops";
 import Icon from "../Icon/icon";
 
@@ -15,7 +15,7 @@ const Modal = ({modal, className, active,
                    shopsError, currentSort, setCurrentSort}) => {
 
     const {theme} = useContext(ThemeContext);
-    const [sortChoose, setSortChoose] = useState(true)
+    const [sortChoose, setSortChoose] = useState(false)
 
     const toggleActive = (e) => {
         let shop = e.target.id;
@@ -45,8 +45,8 @@ const Modal = ({modal, className, active,
                     <div>
                         {
                             shops.map(shop =>
-                                <FilterElem key={shop} id={shop} onClick={(e) => toggleActive(e)}
-                                            active={active.indexOf(shop) !== -1}/>
+                                <ShopElemButton key={shop} id={shop} onClick={(e) => toggleActive(e)}
+                                                active={active.indexOf(shop) !== -1}/>
                             )
                         }
                     </div>

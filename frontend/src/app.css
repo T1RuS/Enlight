@@ -16,3 +16,15 @@
     width: calc(100px + 3vw);
     height: calc(100px + 3vw);
 }
+.mainArea {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    margin-top: 20px;
+
+    width: 90vw;
+    height: fit-content;
+
+    z-index: 5;
+}

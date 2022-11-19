@@ -1,0 +1,240 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 0 2%;
+
+    width: 100%;
+    height: 250px;
+
+    background: var(--backgroundLight);
+
+    box-shadow: 3px 3px 6px var(--shadow),
+    -3px -3px 6px var(--glow);
+
+    border-radius: 10px;
+}
+.wrapper > * {
+    height: 80%;
+}
+
+.wrapper img {
+    user-select: none;
+}
+
+.descriptionArea {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+.itemName {
+    color: var(--text-color-main);
+}
+.moreInfo {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-grow: 1;
+}
+.moreInfo > div {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.borderBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 5px;
+    border-radius: 10px;
+
+    border: 1px solid var(--border-inactive);
+
+    width: fit-content;
+    height: 40px;
+
+    color: var(--text-color-main);
+    user-select: none;
+}
+.borderBtn:hover {
+    border: 1px solid var(--text-color-main);
+}
+.borderBtn span {
+    transform: scale(0.9);
+    cursor: pointer;
+}
+.container {
+    position: relative;
+}
+.container p {
+    margin-left: 30px;
+}
+.borderBtn input {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 20px;
+    width: 20px;
+
+    filter: opacity(0);
+
+    cursor: pointer;
+    z-index: 100;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 20px;
+    width: 20px;
+
+    background: var(--backgroundLight);
+    border-radius: 5px;
+    border: 1px solid var(--text-color-main)
+}
+.container input:checked ~ .checkmark {
+    background: var(--text-color-main);
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+.container .checkmark:after {
+    position: absolute;
+    top: -3px;
+    left: 3px;
+    content: "✔";
+    width: 10px;
+    height: 10px;
+
+    color: var(--background);
+    z-index: 1000;
+}
+.deliveryArea {
+    margin-top: auto;
+    display: flex;
+
+    gap: 20px;
+}
+.deliveryArea > * {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-color-main);
+}
+.deliveryArea span {
+    color: var(--violet);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.priceArea {
+    display: flex;
+    flex-direction: column;
+
+    width: 200px;
+}
+.price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+
+    white-space: nowrap;
+
+    padding: 0 10%;
+
+    height: 40%;
+
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color-main);
+}
+.price[data-theme="dark"] {
+    background-image: var(--linear-grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    gap: 10px;
+}
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px;
+
+    border: 1px solid var(--border-inactive);
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+.favorite {
+    width: 50px;
+}
+.favorite:hover {
+    border: 1px solid var(--text-color-main);
+}
+.favorite:hover span {
+    font-variation-settings:
+            'FILL' 1,
+            'wght' 600,
+            'GRAD' 200,
+            'opsz' 48
+}
+.favorite span {
+    font-variation-settings:
+            'FILL' 0,
+            'wght' 600,
+            'GRAD' 200,
+            'opsz' 48
+}
+.buy {
+    flex-grow: 1;
+    background: var(--backgroundLight);
+    color: var(--text-color-main);
+}
+.buy:hover {
+    background: var(--text-color-main);
+    color: var(--backgroundLight);
+}
+
+.shop {
+    margin-top: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 50px;
+
+    border-radius: 10px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+
+    color: var(--backgroundLight);
+}

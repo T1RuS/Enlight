@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 /*   Применить для всего   */
 * {
@@ -14,23 +15,24 @@
 /*   Стили для тёмный и светлой темы   */
 html[data-theme="dark"] {
     --background: #0a0a0a;
+    --backgroundLight: #171717;
+    --border-inactive: rgba(255, 255, 255, 0.3);
     --shadow: rgba(0,0,0,0.5);
     --glow: rgba(255,255,255,0.02);
 
     --text-color-main: #dcdcdc;
-
 }
 
 html[data-theme="light"] {
     --background: #edf1f4;
+    --backgroundLight: #fffe;
+    --border-inactive: rgba(0, 0, 0, 0.3);
     --shadow: rgba(0,0,0,0.25);
     --glow: #fffb;
 
     --text-color-main: black;
 }
 html {
-    scroll-behavior: smooth;
-
     background: var(--background);
 }
 
@@ -38,11 +40,6 @@ html {
 /*   Общие стили   */
 :root {
     --smooth: all 0.3s ease 0s;
-
-    --18px: calc(18px + 1 * (100vw / 1280));
-    --24px: calc(24px + 1 * (100vw / 1280));
-    --40px: calc(24px + 16 * (100vw / 1280));
-
 
     --inactive-text: #84858a;
 
@@ -56,6 +53,9 @@ html {
     --gradient-color2: #b300cc;
     --gradient-color3: #e100b2;
     --gradient-color4: #ff189a;
+
+    --linear-grad: linear-gradient(to left, var(--gradient-color1), var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
+    --radial-grad: radial-gradient(var(--gradient-color1) 60%, var(--gradient-color2), var(--gradient-color3), var(--gradient-color4));
 }
 
 
